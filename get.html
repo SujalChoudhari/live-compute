@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Never Gonna Give You Up</title>
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: black;
+            /* Set background color to black */
+        }
+
+        video {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Hide video controls */
+        video::-webkit-media-controls {
+            display: none !important;
+        }
+
+        video::-webkit-media-controls-enclosure {
+            display: none !important;
+        }
+
+        .message-container {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            display: none;
+            /* Initially hide the message container */
+            color: aliceblue;
+        }
+
+        .foot {
+            color: aliceblue;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <video autoplay loop controls="false">
+        <source src="images/Rick_Astley_Never_Gonna_Give_You_Up.mp4" type="video/mp4">
+        Sorry, cannot find idle servers.
+    </video>
+
+    <!-- April Fools' Day message container -->
+    <div class="message-container">
+        <h1 style="font-size: 24px; margin-bottom: 10px;">Happy April Fools' Day! 🎉</h1>
+        <p style="font-size: 16px;">You've been <strong>Rickrolled!</strong> 😄</p>
+        <p>Presented by Sujal Choudhari</p>
+        <button>Find me on <a href="https://github.com/SujalChoudhari">GitHub</a></button>
+    </div>
+
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var video = document.querySelector('video');
+            var messageContainer = document.querySelector('.message-container');
+
+            video.addEventListener('loadeddata', function () {
+                setTimeout(()=>{
+                    messageContainer.style.display = 'block';
+                },3000)
+            });
+        });
+    </script>
+</body>
+
+</html>
